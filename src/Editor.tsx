@@ -1,48 +1,34 @@
-// import { ProsemirrorDevTools } from '@remirror/dev';
-import { ReactComponentExtension } from '@remirror/extension-react-component';
+import "@remirror/styles/all.css";
+
 import {
-  TableCellMenu,
-  TableDeleteRowColumnButton,
-  TableExtension
-} from '@remirror/extension-react-tables';
-import { Remirror, useRemirror, useRemirrorContext,ThemeProvider } from '@remirror/react';
-import { AllStyledComponent } from '@remirror/styles/emotion';
-import React, { FC } from 'react';
-import Menu from './Menu';
+  TableComponents,
+  TableExtension,
+} from "@remirror/extension-react-tables";
+import {
+  ReactComponentExtension,
+  Remirror,
+  ThemeProvider,
+  useRemirror,
+  EditorComponent,
+} from "@remirror/react";
+import { HeadingExtension } from 'remirror/extensions';
 
-const EXTENSIONS = () => [
-  new ReactComponentExtension(),
-  new TableExtension(),
-];
+import React, { FC } from "react";
+import Menu from "./Menu";
 
-/**
- * This component contains the editor and any toolbars/chrome it requires.
- */
-const SmallEditor: FC = () => {
-  const { getRootProps } = useRemirrorContext();
-
-  return (
-    <div id='example-editor'>
-      <Menu />
-      <div {...getRootProps()} />
-    </div>
-  );
-};
+const EXTENSIONS = () => [new ReactComponentExtension(), new TableExtension(), new HeadingExtension()];
 
 const SmallEditorContainer: FC = () => {
   const { manager } = useRemirror({ extensions: EXTENSIONS });
 
   return (
-    <AllStyledComponent>
     <ThemeProvider>
-    <Remirror manager={manager}>
-      <SmallEditor />
-      {/* <ProsemirrorDevTools /> */}
-      <TableCellMenu />
-      <TableDeleteRowColumnButton/>
-    </Remirror>
+      <Remirror manager={manager}>
+        <EditorComponent />
+        <TableComponents />
+        <Menu />
+      </Remirror>
     </ThemeProvider>
-  </AllStyledComponent>
   );
 };
 
