@@ -1,4 +1,5 @@
 import "@remirror/styles/all.css";
+import "./style.css";
 
 import {
   TableComponents,
