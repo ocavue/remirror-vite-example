@@ -19,14 +19,14 @@
   },
   "homepage": "https://github.com/ocavue/remirror-vite-example#readme",
   "dependencies": {
-    "@remirror/extension-react-tables": "0.0.0-pr877.9",
-    "@remirror/pm": "0.0.0-pr877.9",
-    "@remirror/react": "0.0.0-pr877.9",
-    "@remirror/react-components": "0.0.0-pr877.9",
-    "@remirror/styles": "0.0.0-pr877.9",
+    "@remirror/extension-react-tables": "0.0.0-pr706.18",
+    "@remirror/pm": "0.0.0-pr706.18",
+    "@remirror/react": "0.0.0-pr706.18",
+    "@remirror/react-components": "0.0.0-pr706.18",
+    "@remirror/styles": "0.0.0-pr706.18",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "remirror": "0.0.0-pr877.9"
+    "remirror": "0.0.0-pr706.18"
   },
   "devDependencies": {
     "@types/node": "^14.14.35",
